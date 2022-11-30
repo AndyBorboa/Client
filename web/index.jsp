@@ -50,7 +50,7 @@
                     <td> <%= p.getPrecio()%></td>
                     <td>
                         <a href="Controlador?accion=editar&Codigo=<%= p.getCodigo() %>" class="btn btn-warning">Modificar</a>
-                        <a href="" class="btn btn-danger">Eliminar</a>
+                        <a href="Controlador?accion=eliminar&Codigo=<%= p.getCodigo() %>" class="btn btn-danger">Eliminar</a>
                     </td>
                 </tr>
                     <%}%>

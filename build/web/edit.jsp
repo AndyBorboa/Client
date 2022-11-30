@@ -22,9 +22,9 @@
                     <h5>Actualizar Producto</h5> 
                 </div>
                 <%
-                    int codigo=Integer.parseInt((String)request.getAttribute("Codigo"));
+                    int Codigo=Integer.parseInt((String)request.getAttribute("Codigo"));
                     ProductoService product = new ProductoService();
-                    Producto pro = product.listarClave(codigo);
+                    Producto pro = product.listarClave(Codigo);
                 %>
                 
                 <div class="card-body">
@@ -40,7 +40,7 @@
                         <label>Precio: </label>
                         <input type="text" value="<%= pro.getPrecio() %>" name="Precio" class="form-control" value="">
                         
-                        <input type="submit" name="accion" value="Actualizar" class="btn btn-secundary">
+                        <input type="submit" name="accion" value="Actualizar" class="btn btn-primary">
                         <a href="Controlador?accion=index">Regresar</a>
                     </form>
                 </div>

@@ -56,6 +56,24 @@ public class Controlador extends HttpServlet {
         }else if(accion.equals("editar")){
             acceso=edit;
             request.setAttribute("Codigo", request.getParameter("Codigo"));
+        }else if(accion.equals("Actualizar")){
+            String nombreProducto= request.getParameter("nombreProducto");
+            String Categoria= request.getParameter("Categoria");
+            int Stock= Integer.parseInt(request.getParameter("Stock"));
+            float Precio= Float.parseFloat(request.getParameter("Precio"));
+            int Codigo= Integer.parseInt(request.getParameter("Codigo"));
+            producto.actualizar(Codigo, nombreProducto, Categoria, Stock, Precio);
+            acceso=index;
+            
+        }else if(accion.equals("eliminar")){
+            int Codigo = Integer.parseInt(request.getParameter("Codigo"));
+            producto.eliminar(Codigo);
+            acceso=index;
+        }
+        
+        
+        else{
+            acceso=index;
         }
         
         

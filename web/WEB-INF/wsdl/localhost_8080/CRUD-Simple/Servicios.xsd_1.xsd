@@ -8,6 +8,10 @@
 
 <xs:element name="agregarResponse" type="tns:agregarResponse"/>
 
+<xs:element name="eliminar" type="tns:eliminar"/>
+
+<xs:element name="eliminarResponse" type="tns:eliminarResponse"/>
+
 <xs:element name="listar" type="tns:listar"/>
 
 <xs:element name="listarClave" type="tns:listarClave"/>
@@ -28,6 +32,28 @@
 <xs:complexType name="agregarResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminar">
+<xs:sequence>
+<xs:element name="Clave" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="producto">
+<xs:sequence>
+<xs:element name="categoria" type="xs:string" minOccurs="0"/>
+<xs:element name="codigo" type="xs:int"/>
+<xs:element name="nombreProducto" type="xs:string" minOccurs="0"/>
+<xs:element name="precio" type="xs:float"/>
+<xs:element name="stock" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -54,16 +80,6 @@
 <xs:complexType name="listarResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:producto" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="producto">
-<xs:sequence>
-<xs:element name="categoria" type="xs:string" minOccurs="0"/>
-<xs:element name="codigo" type="xs:int"/>
-<xs:element name="nombreProducto" type="xs:string" minOccurs="0"/>
-<xs:element name="precio" type="xs:float"/>
-<xs:element name="stock" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 

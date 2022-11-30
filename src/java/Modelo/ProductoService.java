@@ -40,6 +40,14 @@ public class ProductoService {
         webservice.Servicios port = service.getServiciosPort();
         return port.actualizar(clave, nombreProducto, categoria, stock, precio);
     }
+
+    public Producto eliminar(int clave) {
+        webservice.Servicios_Service service = new webservice.Servicios_Service();
+        webservice.Servicios port = service.getServiciosPort();
+        return port.eliminar(clave);
+    }
+    
+    
     
     
 

@@ -28,6 +28,12 @@
 <message name="ActualizarResponse">
 <part name="parameters" element="tns:ActualizarResponse"/>
 </message>
+<message name="eliminar">
+<part name="parameters" element="tns:eliminar"/>
+</message>
+<message name="eliminarResponse">
+<part name="parameters" element="tns:eliminarResponse"/>
+</message>
 <portType name="Servicios">
 <operation name="agregar">
 <input wsam:Action="http://WebService/Servicios/agregarRequest" message="tns:agregar"/>
@@ -44,6 +50,10 @@
 <operation name="Actualizar">
 <input wsam:Action="http://WebService/Servicios/ActualizarRequest" message="tns:Actualizar"/>
 <output wsam:Action="http://WebService/Servicios/ActualizarResponse" message="tns:ActualizarResponse"/>
+</operation>
+<operation name="eliminar">
+<input wsam:Action="http://WebService/Servicios/eliminarRequest" message="tns:eliminar"/>
+<output wsam:Action="http://WebService/Servicios/eliminarResponse" message="tns:eliminarResponse"/>
 </operation>
 </portType>
 <binding name="ServiciosPortBinding" type="tns:Servicios">
@@ -76,6 +86,15 @@
 </output>
 </operation>
 <operation name="Actualizar">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="eliminar">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

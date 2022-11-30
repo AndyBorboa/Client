@@ -103,4 +103,19 @@ public interface Servicios {
         @WebParam(name = "Precio", targetNamespace = "")
         float precio);
 
+    /**
+     * 
+     * @param clave
+     * @return
+     *     returns webservice.Producto
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "eliminar", targetNamespace = "http://WebService/", className = "webservice.Eliminar")
+    @ResponseWrapper(localName = "eliminarResponse", targetNamespace = "http://WebService/", className = "webservice.EliminarResponse")
+    @Action(input = "http://WebService/Servicios/eliminarRequest", output = "http://WebService/Servicios/eliminarResponse")
+    public Producto eliminar(
+        @WebParam(name = "Clave", targetNamespace = "")
+        int clave);
+
 }
