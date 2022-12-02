@@ -41,7 +41,7 @@
           <input class="form-control" type="password" name="pass" /> 
          </div>
          <div align="center">
-          <input type="submit" name="accion" value="Login" class="tm-yellow-btn"">
+          <input type="submit" name="accion" value="Login" class="tm-yellow-btn">
          </div>
          <p align="center">¿No tienes una cuenta? <a href="">Registrarse</a></p>
         </form>
