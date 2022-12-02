@@ -4,12 +4,6 @@
 <xsd:import namespace="http://WebService/" schemaLocation="http://localhost:8080/CRUD-Simple/Servicios?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="agregar">
-<part name="parameters" element="tns:agregar"/>
-</message>
-<message name="agregarResponse">
-<part name="parameters" element="tns:agregarResponse"/>
-</message>
 <message name="listarClave">
 <part name="parameters" element="tns:listarClave"/>
 </message>
@@ -28,6 +22,12 @@
 <message name="ActualizarResponse">
 <part name="parameters" element="tns:ActualizarResponse"/>
 </message>
+<message name="agregar">
+<part name="parameters" element="tns:agregar"/>
+</message>
+<message name="agregarResponse">
+<part name="parameters" element="tns:agregarResponse"/>
+</message>
 <message name="eliminar">
 <part name="parameters" element="tns:eliminar"/>
 </message>
@@ -35,10 +35,6 @@
 <part name="parameters" element="tns:eliminarResponse"/>
 </message>
 <portType name="Servicios">
-<operation name="agregar">
-<input wsam:Action="http://WebService/Servicios/agregarRequest" message="tns:agregar"/>
-<output wsam:Action="http://WebService/Servicios/agregarResponse" message="tns:agregarResponse"/>
-</operation>
 <operation name="listarClave">
 <input wsam:Action="http://WebService/Servicios/listarClaveRequest" message="tns:listarClave"/>
 <output wsam:Action="http://WebService/Servicios/listarClaveResponse" message="tns:listarClaveResponse"/>
@@ -51,6 +47,10 @@
 <input wsam:Action="http://WebService/Servicios/ActualizarRequest" message="tns:Actualizar"/>
 <output wsam:Action="http://WebService/Servicios/ActualizarResponse" message="tns:ActualizarResponse"/>
 </operation>
+<operation name="agregar">
+<input wsam:Action="http://WebService/Servicios/agregarRequest" message="tns:agregar"/>
+<output wsam:Action="http://WebService/Servicios/agregarResponse" message="tns:agregarResponse"/>
+</operation>
 <operation name="eliminar">
 <input wsam:Action="http://WebService/Servicios/eliminarRequest" message="tns:eliminar"/>
 <output wsam:Action="http://WebService/Servicios/eliminarResponse" message="tns:eliminarResponse"/>
@@ -58,15 +58,6 @@
 </portType>
 <binding name="ServiciosPortBinding" type="tns:Servicios">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="agregar">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="listarClave">
 <soap:operation soapAction=""/>
 <input>
@@ -86,6 +77,15 @@
 </output>
 </operation>
 <operation name="Actualizar">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="agregar">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

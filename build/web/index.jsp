@@ -1,63 +1,56 @@
 <%-- 
     Document   : index
-    Created on : 29/11/2022, 10:38:16 AM
+    Created on : 1/12/2022, 04:40:01 PM
     Author     : andre
 --%>
 
-<%@page import="webservice.Producto"%>
-<%@page import="Modelo.ProductoService"%>
-<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <!-- Bootstrap CSS -->
-         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700' rel='stylesheet' type='text/css'>
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+        <link href="css/flexslider.css" rel="stylesheet">
+        <link href="css/templatemo-style.css" rel="stylesheet">
+        
         <title>JSP Page</title>
     </head>
-    
-    
     <body>
-        <div class="container mt-4">
-            <div class="card">
-                <div class="card-header">
-                    <a href="Controlador?accion=add" class="btn btn-primary">Agregar Producto</a>   
-                </div>
-                <div class="card-body">
-                    <table class="table table-hover" cellspacing="0">
-            
-            
-                <tr> 
-                    <th>Codigo</th>
-                    <th>Nombre del producto</th>
-                    <th>Categoria</th>
-                    <th>Stock</th>
-                    <th>Precio</th>
-                    <th>Acciones</th>
-                </tr>
-                    <% 
-                        ProductoService product = new ProductoService();
-                        List <Producto> datos = product.listar();
-                        
-                        for(Producto p: datos){
-                    %>
-                <tr>
-                    <td> <%= p.getCodigo() %> </td>
-                    <td> <%= p.getNombreProducto() %></td>
-                    <td> <%= p.getCategoria() %></td>
-                    <td> <%= p.getStock() %></td>
-                    <td> <%= p.getPrecio()%></td>
-                    <td>
-                        <a href="Controlador?accion=editar&Codigo=<%= p.getCodigo() %>" class="btn btn-warning">Modificar</a>
-                        <a href="Controlador?accion=eliminar&Codigo=<%= p.getCodigo() %>" class="btn btn-danger">Eliminar</a>
-                    </td>
-                </tr>
-                    <%}%>
 
-            </table>
-                </div>
-            </div>
-        </div>
+          <br>
+   <div class="container tm-home-section-1">
+       <br>
+       <br>
+   
+   <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active tm-white-bg" id="hotel">
+     <div class="tm-search-box effect2">
+      <div class="hotel-search-form">
+       <div class="tm-form-inner">
+           <br>
+           <h2 align="center">Iniciar Sesion</h2>
+           <br>
+        <form action="Controlador" name="frmIniciarSesion" method="post" >
+         <div class="form-group">
+          <label>Nombre de Usuario:</label>
+          <input class="form-control" type="text" name="nombreUsuario" /> <br>
+          <label>Contraseña:        </label>
+          <input class="form-control" type="password" name="pass" /> 
+         </div>
+         <div align="center">
+          <input type="submit" name="accion" value="Login" class="tm-yellow-btn"">
+         </div>
+         <p align="center">¿No tienes una cuenta? <a href="">Registrarse</a></p>
+        </form>
+
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   </div>
     </body>
 </html>

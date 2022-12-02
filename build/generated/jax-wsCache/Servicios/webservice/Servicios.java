@@ -27,30 +27,6 @@ public interface Servicios {
 
     /**
      * 
-     * @param precio
-     * @param categoria
-     * @param stock
-     * @param nombreProducto
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "agregar", targetNamespace = "http://WebService/", className = "webservice.Agregar")
-    @ResponseWrapper(localName = "agregarResponse", targetNamespace = "http://WebService/", className = "webservice.AgregarResponse")
-    @Action(input = "http://WebService/Servicios/agregarRequest", output = "http://WebService/Servicios/agregarResponse")
-    public String agregar(
-        @WebParam(name = "nombreProducto", targetNamespace = "")
-        String nombreProducto,
-        @WebParam(name = "Categoria", targetNamespace = "")
-        String categoria,
-        @WebParam(name = "Stock", targetNamespace = "")
-        int stock,
-        @WebParam(name = "Precio", targetNamespace = "")
-        float precio);
-
-    /**
-     * 
      * @param clave
      * @return
      *     returns webservice.Producto
@@ -94,6 +70,30 @@ public interface Servicios {
     public String actualizar(
         @WebParam(name = "Clave", targetNamespace = "")
         int clave,
+        @WebParam(name = "nombreProducto", targetNamespace = "")
+        String nombreProducto,
+        @WebParam(name = "Categoria", targetNamespace = "")
+        String categoria,
+        @WebParam(name = "Stock", targetNamespace = "")
+        int stock,
+        @WebParam(name = "Precio", targetNamespace = "")
+        float precio);
+
+    /**
+     * 
+     * @param precio
+     * @param categoria
+     * @param stock
+     * @param nombreProducto
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "agregar", targetNamespace = "http://WebService/", className = "webservice.Agregar")
+    @ResponseWrapper(localName = "agregarResponse", targetNamespace = "http://WebService/", className = "webservice.AgregarResponse")
+    @Action(input = "http://WebService/Servicios/agregarRequest", output = "http://WebService/Servicios/agregarResponse")
+    public String agregar(
         @WebParam(name = "nombreProducto", targetNamespace = "")
         String nombreProducto,
         @WebParam(name = "Categoria", targetNamespace = "")
