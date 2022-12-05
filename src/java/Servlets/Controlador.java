@@ -80,14 +80,15 @@ public class Controlador extends HttpServlet {
         String contraseña = request.getParameter("pass");
         
         UsuarioDAO co = new UsuarioDAO();
+        
         if(co.autenticacion(usuario, contraseña)){
             sesion.setAttribute("usuario", usuario);
             acceso=listar;
         }else{
-            response.sendRedirect("index.jsp");
             acceso=index;
         }
-            
+        
+        
         }else{
             acceso=listar;
         }
