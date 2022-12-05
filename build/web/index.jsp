@@ -33,7 +33,7 @@
            <br>
            <h2 align="center">Iniciar Sesion</h2>
            <br>
-        <form action="Controlador" name="frmIniciarSesion" method="post" >
+        <form action="Controlador">
          <div class="form-group">
           <label>Nombre de Usuario:</label>
           <input class="form-control" type="text" name="nombreUsuario" /> <br>
