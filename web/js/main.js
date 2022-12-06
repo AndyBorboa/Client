@@ -39,26 +39,30 @@ $ (function(){
        return false;
    }
    
-   $('#btnCrearProducto').click(function(e){
-      e.preventDefault();
-      var nombreProducto = $('#nombreProducto').val();
-      var Categoria = $('#Categoria').val();
-      var Stock = $('#Stock').val();
-      var Precio = $('#Precio').val();
-      
-      if(validarFields(nombreProducto,Categoria,Stock,Precio)){
-          var data = new FormData($('#frmAdd')[0]);
-          $.ajax({
-             url : "GuardarProducto",
-             type : "post",
-             data : data,
-             contentType : false,
-             processData : false,
-             success : function(data){
-                 alert(data);
-             }
-          });
-      }
-   });
-   
+    $('#btnCrearProducto').click(function(e){
+        e.preventDefault();
+        var varnombreProducto = $('#nombreProducto').val();
+        var varCategoria = $('#Categoria').val();
+        var varStock = $('#Stock').val();
+        var varPrecio = $('#Precio').val();
+        
+        if(validarFields(varnombreProducto,varCategoria,varStock,varPrecio)){
+            var data = new FormData();
+            data.append("nombreProducto", varnombreProducto);
+            data.append("Categoria", varCategoria);
+            data.append("Stock", varStock);
+            data.append("Precio", varPrecio);
+            
+            $.ajax({
+                url : "GuardarProducto",
+                type : "POST",
+                data : data,
+                contentType : false,
+                processData : false,
+                success : function(data){
+                    alert(data);
+                }
+            });
+        }
+    });
 });
