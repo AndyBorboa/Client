@@ -33,17 +33,17 @@
            <br>
            <h2 align="center">Iniciar Sesion</h2>
            <br>
-        <form action="Controlador">
+        <form action="IniciarSesion" name="frmIniciarSesion" method="post" >
          <div class="form-group">
           <label>Nombre de Usuario:</label>
           <input class="form-control" type="text" name="nombreUsuario" /> <br>
           <label>Contraseña:        </label>
-          <input class="form-control" type="password" name="pass" /> 
+          <input class="form-control" type="password" name="pass" /> <br>
          </div>
          <div align="center">
-          <input type="submit" name="accion" value="Login" class="tm-yellow-btn">
+          <button type="submit" name="submit" class="tm-yellow-btn">Iniciar Sesion</button>
          </div>
-         <p align="center">¿No tienes una cuenta? <a href="">Registrarse</a></p>
+         <p align="center">¿No tienes una cuenta? <a href="Registro.jsp">Registrarse</a></p>
         </form>
 
        </div>
