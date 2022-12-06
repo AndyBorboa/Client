@@ -12,7 +12,13 @@
          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
          <script type="text/javascript" src="js/jquery.min.js"></script>
          <script type="text/javascript" src="js/main.js"></script>
-        <title>JSP Page</title>
+         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700' rel='stylesheet' type='text/css'>
+         <link href="css/font-awesome.min.css" rel="stylesheet">
+         <link href="css/bootstrap.min.css" rel="stylesheet">
+         <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+         <link href="css/flexslider.css" rel="stylesheet">
+         <link href="css/templatemo-style.css" rel="stylesheet">
+         <title>JSP Page</title>
     </head>
     <body>
                <div class="container mt-4">
@@ -21,17 +27,17 @@
                     <h5>Agregar nuevo Producto</h5> 
                 </div>
                 <div class="card-body">
-                    <form accion="Controlador">
+                    <form accion="GuardarProducto" id="frmAdd" method="post">
                         <label>Nombre del producto: </label>
-                        <input type="text" name="nombreProducto" class="form-control">
+                        <input type="text" name="nombreProducto" id="nombreProducto" class="form-control">
                         <label>Categoria: </label>
-                        <input type="text" name="Categoria" class="form-control">
+                        <input type="text" name="Categoria" id="Categoria" class="form-control">
                         <label>Stock: </label>
-                        <input type="text" name="Stock" class="form-control">
+                        <input type="text" name="Stock" id="Stock" class="form-control">
                         <label>Precio: </label>
-                        <input type="text" name="Precio" class="form-control">
+                        <input type="text" name="Precio" id="Precio" class="form-control"><br>
                         
-                        <input type="submit" name="accion" value="Guardar">
+                        <button type="submit" name="submit" id="btnCrearProducto" class="btn btn-primary">Guardar</button>
                         <a href="Controlador?accion=index">Regresar</a>
                     </form>
                 </div>
