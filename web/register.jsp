@@ -18,7 +18,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
         <div class="container tm-home-section-1">
         <br>
         <br>
@@ -29,11 +28,15 @@
         <div class="tm-search-box effect2">
     <div class="hotel-search-form">  
         <div class="tm-form-inner">
-            <h1 align="center">Registro de Usuario</h1> 
+            <h1 align="center">Registro de Usuario</h1> <br>
 <form name="frmRegistro" method="post" action="RegistrarUsuario"> 
     <div class="form-group">
-    Nombre de Usuario :<input class="form-control" type = "text" name="nombreUsuario" id="nombreUsuario"/> 
-    Contraseña:        <input class="form-control" type = "password" name="pass" id="contraseña"/> <br>
+        <label> Nombre de Usuario</label>
+        <input class="form-control" type = "text" name="nombreUsuario" id="nombreUsuario"/> 
+        <label>Contraseña:</label>
+        <input class="form-control" type = "password" name="pass" id="contraseña"/>
+        <label>Confirmar contraseña:</label>
+        <input class="form-control" type = "password" name="confirm" id="confirm"/> <br>
 </br>
     </div>
     <div align="center">

@@ -33,19 +33,23 @@ public class RegistrarUsuario extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
        PrintWriter out = response.getWriter();
        
-       
-       
        String nombreUsuario = request.getParameter("nombreUsuario");
-        String contraseña = request.getParameter("pass");
-        
-        UsuarioDAO co = new UsuarioDAO();
-        if(co.registrarUsuario(nombreUsuario, contraseña)){
-            response.sendRedirect("index.jsp");
-            
-        }else{
-            response.sendRedirect("Registro.jsp");
-            
-        }
+       String contraseña = request.getParameter("pass");
+       String confirm = request.getParameter("confirm");
+       
+       
+       
+       if(contraseña.equalsIgnoreCase(confirm)){
+           UsuarioDAO co = new UsuarioDAO();
+           if(co.registrarUsuario(nombreUsuario, contraseña)){
+               response.sendRedirect("index.jsp");
+           }else{
+               response.sendRedirect("register.jsp");
+           }
+       }else{
+           response.sendRedirect("register.jsp");
+       }
+       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
