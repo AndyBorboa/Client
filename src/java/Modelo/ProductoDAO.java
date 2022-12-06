@@ -16,7 +16,7 @@ public class ProductoDAO extends Conexion{
     int resp;
     String msj;
     
-    public String registrar (String nombreProducto, String categoria, int stock, float precio){
+    public boolean registrar (String nombreProducto, String categoria, int stock, float precio){
         PreparedStatement pst = null;
         
         try{
@@ -30,10 +30,10 @@ public class ProductoDAO extends Conexion{
             resp= pst.executeUpdate();
             if(resp==1){
                 msj= "Producto Agregado";
-                return msj;
+                return true;
             }else{
                 msj = "Error";
-                return msj;
+                return false;
             }
             
         }catch(Exception ex){
@@ -48,7 +48,7 @@ public class ProductoDAO extends Conexion{
             }
             
         }
-        return msj;
+        return false;
     }
      
     

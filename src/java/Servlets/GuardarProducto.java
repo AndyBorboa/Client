@@ -32,18 +32,45 @@ public class GuardarProducto extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        int Stock=0;
+        float Precio = 0;
         
         String nombreProducto = request.getParameter("nombreProducto");
         String Categoria = request.getParameter("Categoria");
         String stock = request.getParameter("Stock");
         String precio = request.getParameter("Precio");
-        int Stock = Integer.parseInt(stock);
-        float Precio = Float.parseFloat(precio);
+        
+        
+        if(nombreProducto!=null){
+            response.getWriter().println(nombreProducto);
+        }else{
+            response.getWriter().println("Nombre null");
+        }
+        
+        if(Categoria!=null){
+            response.getWriter().println(Categoria);
+        }else{
+            response.getWriter().println("Categoria null");
+        }
+        
+        
+        if(stock!=null){
+            Stock = Integer.parseInt(stock);
+        }else{
+            response.getWriter().println("Stock null");
+        }
+        if(precio!=null){
+            Precio = Float.parseFloat(precio);
+            
+        }else{
+            response.getWriter().println("Precio null");
+        }
+        
         
         
         
         ProductoDAO producto = new ProductoDAO();
-        if(producto.registrar(nombreProducto, Categoria, Stock, Precio).equalsIgnoreCase("Producto Agregado")){
+        if(producto.registrar(nombreProducto, Categoria, Stock, Precio)){
             response.getWriter().println("Producto creado exitosamente");
         }else{
             response.getWriter().println("Error al crear producto");
