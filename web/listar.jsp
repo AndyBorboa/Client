@@ -23,8 +23,13 @@
         <div class="container mt-4">
             <div class="card">
                 <div class="card-header">
-                    <a href="Controlador?accion=add" class="btn btn-primary">Agregar Producto</a>   
+                    <h1 align="center">Bienvenido ${sessionScope.usuario}</h1><br>
+                    <a href="Controlador?accion=add" class="btn btn-primary">Agregar Producto</a>
+                    <a href="Controlador?accion=logout" class="btn btn-primary">Logout</a>
+                    
                 </div>
+                    
+           
                 <div class="card-body">
                     <table class="table table-hover" cellspacing="0">
             

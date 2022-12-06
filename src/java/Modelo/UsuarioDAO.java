@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Coneccion;
+package Modelo;
 
+import Coneccion.Conexion;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -47,4 +48,34 @@ public class UsuarioDAO extends Conexion{
         }
         return false;
      }
+    
+    public boolean registrarUsuario (String nombreUsuario, String contraseña){
+        PreparedStatement pst = null;
+        
+        try{
+            String consulta ="insert into usuario (usuario,contraseña) values (?,?)";
+            pst= getConexion().prepareStatement(consulta);
+            pst.setString(1, nombreUsuario);
+            pst.setString(2, contraseña);
+        
+            
+            
+            if(pst.executeUpdate()==1){
+                return true;
+            }
+            
+        }catch(Exception ex){
+            
+        }finally{
+            try{
+                if(getConexion()!=null) getConexion().close();
+                if(pst!=null) pst.close();
+                
+            }catch(Exception e){
+                System.out.println("Error: " +e);
+            }
+            
+        }
+        return false;
+    }
 }

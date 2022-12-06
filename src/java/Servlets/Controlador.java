@@ -5,9 +5,8 @@
  */
 package Servlets;
 
-import Coneccion.UsuarioDAO;
+import Modelo.UsuarioDAO;
 import Modelo.ProductoService;
-import Modelo.Usuario;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -74,8 +73,14 @@ public class Controlador extends HttpServlet {
             producto.eliminar(Codigo);
             acceso=listar;
             
+        }else if(accion.equals("logout")){
+            HttpSession newsession = request.getSession(false);
+            if (newsession != null) 
+            {
+                newsession.invalidate();
+            }
+            acceso=index;
         }
-            
         else{
             acceso=listar;
         }

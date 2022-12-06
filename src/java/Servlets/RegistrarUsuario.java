@@ -12,13 +12,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author andre
  */
-public class IniciarSesion extends HttpServlet {
+public class RegistrarUsuario extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,21 +28,23 @@ public class IniciarSesion extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        HttpSession sesion = request.getSession(true);
-         
-        String usuario = request.getParameter("nombreUsuario");
+       PrintWriter out = response.getWriter();
+       
+       
+       
+       String nombreUsuario = request.getParameter("nombreUsuario");
         String contraseña = request.getParameter("pass");
         
         UsuarioDAO co = new UsuarioDAO();
-        if(co.autenticacion(usuario, contraseña)){
-            sesion.setAttribute("usuario", usuario);
-            response.sendRedirect("listar.jsp");
-        }else{
+        if(co.registrarUsuario(nombreUsuario, contraseña)){
             response.sendRedirect("index.jsp");
+            
+        }else{
+            response.sendRedirect("Registro.jsp");
+            
         }
     }
 

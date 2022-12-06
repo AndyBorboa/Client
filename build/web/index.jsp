@@ -43,7 +43,7 @@
          <div align="center">
           <button type="submit" name="submit" class="tm-yellow-btn">Iniciar Sesion</button>
          </div>
-         <p align="center">¿No tienes una cuenta? <a href="Registro.jsp">Registrarse</a></p>
+         <p align="center">¿No tienes una cuenta? <a href="register.jsp">Registrarse</a></p>
         </form>
 
        </div>

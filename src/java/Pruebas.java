@@ -1,4 +1,5 @@
-package Coneccion;
+
+import Modelo.UsuarioDAO;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
