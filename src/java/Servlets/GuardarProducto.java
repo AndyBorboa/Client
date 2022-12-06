@@ -6,7 +6,6 @@
 package Servlets;
 
 import Modelo.ProductoDAO;
-import Modelo.ProductoService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -33,16 +32,18 @@ public class GuardarProducto extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        ProductoDAO producto = new ProductoDAO();
         
         String nombreProducto = request.getParameter("nombreProducto");
         String Categoria = request.getParameter("Categoria");
-        int Stock = Integer.parseInt(request.getParameter("Stock"));
-        float Precio = Float.parseFloat(request.getParameter("Precio"));
+        String stock = request.getParameter("Stock");
+        String precio = request.getParameter("Precio");
+        int Stock = Integer.parseInt(stock);
+        float Precio = Float.parseFloat(precio);
         
-        producto.agregar(nombreProducto, Categoria, Stock, Precio);
         
-        if(producto.agregar(nombreProducto, Categoria, Stock, Precio)){
+        
+        ProductoDAO producto = new ProductoDAO();
+        if(producto.registrar(nombreProducto, Categoria, Stock, Precio).equalsIgnoreCase("Producto Agregado")){
             response.getWriter().println("Producto creado exitosamente");
         }else{
             response.getWriter().println("Error al crear producto");

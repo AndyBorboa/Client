@@ -13,8 +13,10 @@ import java.sql.PreparedStatement;
  * @author andre
  */
 public class ProductoDAO extends Conexion{
+    int resp;
+    String msj;
     
-    public boolean agregar (String nombreProducto, String categoria, int stock, float precio){
+    public String registrar (String nombreProducto, String categoria, int stock, float precio){
         PreparedStatement pst = null;
         
         try{
@@ -24,11 +26,14 @@ public class ProductoDAO extends Conexion{
             pst.setString(2, categoria);
             pst.setInt(3, stock);
             pst.setFloat(4, precio);
-        
             
-            
-            if(pst.executeUpdate()==1){
-                return true;
+            resp= pst.executeUpdate();
+            if(resp==1){
+                msj= "Producto Agregado";
+                return msj;
+            }else{
+                msj = "Error";
+                return msj;
             }
             
         }catch(Exception ex){
@@ -43,7 +48,7 @@ public class ProductoDAO extends Conexion{
             }
             
         }
-        return false;
+        return msj;
     }
      
     

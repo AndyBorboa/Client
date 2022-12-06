@@ -15,7 +15,7 @@
         <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
         <link href="css/flexslider.css" rel="stylesheet">
         <link href="css/templatemo-style.css" rel="stylesheet">
-        <title>JSP Page</title>
+        <title>Registrar Usuario</title>
     </head>
     <body>
         <div class="container tm-home-section-1">

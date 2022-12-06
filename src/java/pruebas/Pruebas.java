@@ -19,8 +19,8 @@ public class Pruebas {
     public static void main(String[] args) {
     UsuarioDAO co = new UsuarioDAO();
     ProductoDAO pro = new ProductoDAO();
-    System.out.println(co.autenticacion("Acertiijo", "mango123"));
-    System.out.println(pro.agregar("Apio", "Verduras", 24, 12.50f));
+    //System.out.println(co.autenticacion("Acertiijo", "mango123"));
+    //System.out.println(pro.registrar("Apio", "Verduras", 24, 12.50f));
     }
     
 }

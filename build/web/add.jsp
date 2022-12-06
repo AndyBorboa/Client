@@ -18,7 +18,7 @@
          <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
          <link href="css/flexslider.css" rel="stylesheet">
          <link href="css/templatemo-style.css" rel="stylesheet">
-         <title>JSP Page</title>
+         <title>Agregar Producto</title>
     </head>
     <body>
                <div class="container mt-4">
@@ -27,7 +27,8 @@
                     <h5>Agregar nuevo Producto</h5> 
                 </div>
                 <div class="card-body">
-                    <form accion="GuardarProducto" id="frmAdd" method="post">
+                    
+                    <form action="GuardarProducto" name="frmRegistroProducto" method="post" id="frmAdd">
                         <label>Nombre del producto: </label>
                         <input type="text" name="nombreProducto" id="nombreProducto" class="form-control">
                         <label>Categoria: </label>

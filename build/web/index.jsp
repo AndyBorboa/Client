@@ -16,7 +16,7 @@
         <link href="css/flexslider.css" rel="stylesheet">
         <link href="css/templatemo-style.css" rel="stylesheet">
         
-        <title>JSP Page</title>
+        <title>Inicio</title>
     </head>
     <body>
 

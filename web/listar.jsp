@@ -15,7 +15,7 @@
          <!-- Bootstrap CSS -->
          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
          <script type="text/javascript" src="js/jquery.min.js"></script>
-        <title>JSP Page</title>
+        <title>Listar Productos</title>
     </head>
     
     
@@ -24,7 +24,7 @@
             <div class="card">
                 <div class="card-header">
                     <h1 align="center">Bienvenido ${sessionScope.usuario}</h1><br>
-                    <a href="Controlador?accion=add" class="btn btn-primary">Agregar Producto</a>
+                    <a href="add.jsp" class="btn btn-primary">Agregar Producto</a>
                     <a href="Controlador?accion=logout" class="btn btn-primary">Logout</a>
                     
                 </div>
